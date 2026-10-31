@@ -1,103 +1,96 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
+    background-color: #08020f;
+    color: #ffffff;
     min-height: 100vh;
-    background-color: #0b0213;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
     position: relative;
+    overflow-x: hidden;
 }
 
-/* خلفية التوهج البنفسجي */
-.background-glow {
+/* خلفية التوهج الأرجواني خلف الكرت */
+.bg-gradient {
     position: absolute;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(138, 43, 226, 0.45) 0%, rgba(0, 0, 0, 0) 70%);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(147, 51, 234, 0.45) 0%, rgba(9, 3, 20, 0) 70%);
     z-index: 1;
+    pointer-events: none;
 }
 
-/* بطاقة تسجيل الدخول (التأثير الزجاجي) */
-.login-card {
+/* الكرت الزجاجي (Glassmorphism) */
+.glass-card {
     position: relative;
     z-index: 2;
-    width: 380px;
-    padding: 40px 30px;
-    background: rgba(20, 10, 35, 0.4);
-    backdrop-filter: blur(15px);
-    border-radius: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 30px rgba(128, 0, 128, 0.3);
+    background: rgba(20, 10, 35, 0.55);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1.5px solid rgba(168, 85, 247, 0.4);
+    border-radius: 28px;
+    padding: 35px 30px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6),
+                inset 0 0 15px rgba(168, 85, 247, 0.15);
     text-align: center;
 }
 
-/* عنوان الشعار Nutricore */
-.brand-title {
+/* العنوان الرئيسي LOGO */
+.logo-title {
     font-size: 2.2rem;
     font-weight: 900;
-    color: #4a90e2;
-    text-shadow: 
-        0 0 5px #00d2ff,
-        0 0 10px #00d2ff,
-        0 0 20px #7b2cbf;
     letter-spacing: 2px;
-    margin-bottom: 15px;
+    color: #e9d5ff;
+    text-shadow: 0 0 12px rgba(192, 132, 252, 0.8), 0 0 20px rgba(168, 85, 247, 0.4);
+    margin-bottom: 8px;
 }
 
-/* نص الترحيب */
 .welcome-text {
-    color: #e056fd;
     font-size: 1.4rem;
-    font-weight: 600;
+    color: #f472b6;
     margin-bottom: 25px;
-    text-shadow: 0 0 8px #e056fd;
+    font-style: italic;
+    text-shadow: 0 0 8px rgba(244, 114, 182, 0.6);
 }
 
-/* الحقول والنصوص */
+/* الحقول والمدخلات */
 .input-group {
-    text-align: right;
+    text-align: left;
     margin-bottom: 18px;
 }
 
 .input-group label {
     display: block;
-    color: #ffffff;
     font-size: 0.85rem;
+    color: #d8b4fe;
     margin-bottom: 6px;
-    direction: ltr;
-    text-align: left;
+    padding-left: 4px;
 }
 
 .input-group input {
     width: 100%;
     padding: 12px 16px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1.5px solid rgba(255, 255, 255, 0.6);
+    background: rgba(15, 5, 29, 0.6);
+    border: 1px solid rgba(192, 132, 252, 0.5);
     border-radius: 12px;
     color: #ffffff;
     font-size: 0.95rem;
+    text-align: right;
     outline: none;
     transition: all 0.3s ease;
-    text-align: right;
-}
-
-.input-group input::placeholder {
-    color: #cccccc;
 }
 
 .input-group input:focus {
-    border-color: #be2edd;
-    box-shadow: 0 0 10px #be2edd;
+    border-color: #c084fc;
+    box-shadow: 0 0 10px rgba(192, 132, 252, 0.5);
 }
 
 /* خيارات تذكرني ونسيت كلمة المرور */
@@ -105,77 +98,138 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
     font-size: 0.85rem;
 }
 
-.forget-pass {
-    color: #ffffff;
+.forgot-link {
+    color: #e9d5ff;
     text-decoration: none;
-    direction: ltr;
+    transition: opacity 0.2s;
 }
 
-.forget-pass:hover {
+.forgot-link:hover {
     text-decoration: underline;
+    opacity: 0.8;
 }
 
 .remember-me {
-    color: #ffffff;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     cursor: pointer;
+    color: #ffffff;
 }
 
-.remember-me input[type="checkbox"] {
-    accent-color: #8e44ad;
-    width: 16px;
-    height: 16px;
-}
-
-/* زر تسجيل الدخول */
-.btn-submit {
+/* الأزرار */
+.btn {
     width: 100%;
     padding: 12px;
-    background: linear-gradient(90deg, #6c5ce7, #a29bfe);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 12px;
-    color: #ffffff;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 0 15px rgba(108, 92, 231, 0.6);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.btn-submit:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 25px rgba(108, 92, 231, 0.9);
-}
-
-/* الفاصل */
-.divider {
-    color: #ffffff;
-    margin: 15px 0;
-    font-size: 0.9rem;
-    font-weight: bold;
-}
-
-/* زر إنشاء حساب جديد */
-.btn-signup {
-    padding: 8px 24px;
-    background: rgba(142, 68, 173, 0.3);
-    border: 1.5px solid #e056fd;
     border-radius: 20px;
-    color: #ffffff;
-    font-size: 0.9rem;
+    font-size: 1.05rem;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(224, 86, 253, 0.4);
-    transition: background 0.3s, box-shadow 0.3s;
+    transition: all 0.3s ease;
 }
 
-.btn-signup:hover {
-    background: rgba(224, 86, 253, 0.6);
-    box-shadow: 0 0 18px rgba(224, 86, 253, 0.8);
+.btn-primary {
+    background: linear-gradient(135deg, #7e22ce, #a855f7);
+    border: 1px solid #c084fc;
+    color: white;
+    box-shadow: 0 4px 15px rgba(126, 34, 206, 0.4);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.8);
+    transform: translateY(-1px);
+}
+
+.divider {
+    margin: 14px 0;
+    color: #d8b4fe;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.btn-outline {
+    background: rgba(126, 34, 206, 0.2);
+    border: 1.5px solid #c084fc;
+    color: white;
+    border-radius: 25px;
+}
+
+.btn-outline:hover {
+    background: rgba(168, 85, 247, 0.4);
+}
+
+/* --- الشاشة الرئيسية والإحصائيات --- */
+.dashboard-container {
+    width: 90%;
+    max-width: 900px;
+    z-index: 2;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.btn-logout {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* مستطيل الإحصائيات المقسم 4 أقسام */
+.stats-box {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 25px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border-left: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.stat-item:last-child {
+    border-left: none;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #f472b6;
+    margin-bottom: 6px;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #d8b4fe;
+    text-align: center;
+}
+
+@media (max-width: 650px) {
+    .stats-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .stat-item {
+        border-left: none;
+        border-bottom: 1px solid rgba(168, 85, 247, 0.3);
+    }
 }
