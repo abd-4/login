@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #0b0213;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* خلفية التوهج البنفسجي */
+.background-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.45) 0%, rgba(0, 0, 0, 0) 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* بطاقة تسجيل الدخول (التأثير الزجاجي) */
+.login-card {
+    position: relative;
+    z-index: 2;
+    width: 380px;
+    padding: 40px 30px;
+    background: rgba(20, 10, 35, 0.4);
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 30px rgba(128, 0, 128, 0.3);
+    text-align: center;
+}
+
+/* عنوان الشعار Nutricore */
+.brand-title {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #4a90e2;
+    text-shadow: 
+        0 0 5px #00d2ff,
+        0 0 10px #00d2ff,
+        0 0 20px #7b2cbf;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+/* نص الترحيب */
+.welcome-text {
+    color: #e056fd;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-shadow: 0 0 8px #e056fd;
+}
+
+/* الحقول والنصوص */
+.input-group {
+    text-align: right;
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    color: #ffffff;
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    direction: ltr;
+    text-align: left;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+    text-align: right;
+}
+
+.input-group input::placeholder {
+    color: #cccccc;
+}
+
+.input-group input:focus {
+    border-color: #be2edd;
+    box-shadow: 0 0 10px #be2edd;
+}
+
+/* خيارات تذكرني ونسيت كلمة المرور */
+.options-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+}
+
+.forget-pass {
+    color: #ffffff;
+    text-decoration: none;
+    direction: ltr;
+}
+
+.forget-pass:hover {
+    text-decoration: underline;
+}
+
+.remember-me {
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.remember-me input[type="checkbox"] {
+    accent-color: #8e44ad;
+    width: 16px;
+    height: 16px;
+}
+
+/* زر تسجيل الدخول */
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #6c5ce7, #a29bfe);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(108, 92, 231, 0.6);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(108, 92, 231, 0.9);
+}
+
+/* الفاصل */
+.divider {
+    color: #ffffff;
+    margin: 15px 0;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* زر إنشاء حساب جديد */
+.btn-signup {
+    padding: 8px 24px;
+    background: rgba(142, 68, 173, 0.3);
+    border: 1.5px solid #e056fd;
+    border-radius: 20px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(224, 86, 253, 0.4);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.btn-signup:hover {
+    background: rgba(224, 86, 253, 0.6);
+    box-shadow: 0 0 18px rgba(224, 86, 253, 0.8);
+}
