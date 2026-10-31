@@ -3,43 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NUTRICORE - تسجيل الدخول</title>
+    <title>NUTRICORE - تطبيق أخصائي التغذية</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="background-glow"></div>
+    <!-- خلفية تدرج الألوان -->
+    <div class="bg-gradient"></div>
 
-    <div class="login-card">
-        <h1 class="brand-title">NUTRICORE</h1>
+    <!-- 1. واجهة تسجيل الدخول / إنشاء الحساب -->
+    <div id="auth-screen" class="glass-card">
+        <h1 class="logo-title">NUTRICORE</h1>
         <h2 class="welcome-text">Welcome :</h2>
 
-        <form>
+        <form id="auth-form">
+            <!-- البريد الإلكتروني -->
             <div class="input-group">
                 <label for="email">Email address</label>
                 <input type="email" id="email" placeholder="ضع البريد الإلكتروني" required>
             </div>
 
+            <!-- كلمة المرور -->
             <div class="input-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" placeholder="ضع كلمة المرور" required>
             </div>
 
+            <!-- خيارات تذكرني ونست كلمة المرور -->
             <div class="options-row">
-                <a href="#" class="forget-pass">Forget Password ?</a>
+                <a href="#" class="forgot-link">Forget Password ?</a>
                 <label class="remember-me">
-                    <input type="checkbox">
                     <span>تذكرني</span>
+                    <input type="checkbox" id="remember-me">
+                    <span class="custom-checkbox"></span>
                 </label>
             </div>
 
-            <button type="submit" class="btn-submit">تسجيل دخول</button>
+            <!-- أزرار الإجراءات -->
+            <button type="submit" id="login-btn" class="btn btn-primary">تسجيل دخول</button>
+            
+            <div class="divider">or</div>
+
+            <button type="button" id="register-btn" class="btn btn-outline">إنشاء حساب جديد</button>
         </form>
-
-        <div class="divider">or</div>
-
-        <button class="btn-signup">إنشاء حساب جديد</button>
     </div>
 
+    <!-- 2. الواجهة الرئيسية للتطبيق (تظهر بعد الدخول) -->
+    <div id="dashboard-screen" class="dashboard-container hidden">
+        <header class="dash-header">
+            <h2>مرحباً بك في لوحة تحكم NUTRICORE</h2>
+            <button id="logout-btn" class="btn-logout">تسجيل الخروج</button>
+        </header>
+
+        <!-- مستطيل الإحصائيات المقسم إلى 4 أقسام -->
+        <section class="stats-box glass-card">
+            <div class="stat-item">
+                <span class="stat-value" id="stat-users">0</span>
+                <span class="stat-label">عدد المستخدمين</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value" id="stat-plans">124</span>
+                <span class="stat-label">عدد الخطط الغذائية المنشأة</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value" id="stat-foods">850</span>
+                <span class="stat-label">عدد الأطعمة بقاعدة البيانات</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value" id="stat-rating">4.9 ★</span>
+                <span class="stat-label">متوسط تقييم التطبيق</span>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
